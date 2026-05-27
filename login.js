@@ -13,6 +13,7 @@ const users = [
   { username: "Soul",  password: "Yerp1214@12!" },
   { username: "Xboom16",  password: "Yerp1314@13!" },
   { username: "Skippy32",  password: "Yerp1414@!#" },
+  { username: "Tophat3",  password: "Yerp1514@15!" },
 ];
 function login() {
   const username = document.getElementById("username").value.trim();
