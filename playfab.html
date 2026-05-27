@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PlayFab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hub-topbar">
+    <div class="staff-dropdown-wrap">
+      <button class="staff-btn" onclick="toggleDropdown()">
+        <span id="staffName">Staff</span>
+        <span class="arrow" id="arrow">▾</span>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <button id="devBtn" onclick="window.location.href='dev.html'" style="display:none">🛠️ Dev Panel</button>
+        <button onclick="window.location.href='settings.html'">⚙️ Settings</button>
+        <button onclick="window.location.href='help.html'">❓ Help</button>
+        <button onclick="logout()">🚪 Logout</button>
+      </div>
+    </div>
+    <div class="tab-bar">
+      <button class="tab-btn" onclick="window.location.href='dashboard.html'">🏠 Home</button>
+      <button class="tab-btn" onclick="window.location.href='moderation.html'">🛡️ Moderation</button>
+      <button class="tab-btn active" onclick="window.location.href='playfab.html'">🎮 PlayFab</button>
+      <button class="tab-btn" onclick="window.location.href='fun.html'">🎉 Fun</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="panel" style="width:500px;">
+      <h2>🎮 PlayFab</h2>
+
+      <!-- Player Select -->
+      <div class="settings-section">
+        <div class="settings-label">Select Player</div>
+        <div class="search-row">
+          <select id="playerSelect" onchange="onPlayerSelected()">
+            <option value="">Loading players...</option>
+          </select>
+          <button onclick="loadPlayers()" title="Refresh">🔄</button>
+        </div>
+        <div id="selectedPlayer" style="display:none">
+          <div class="player-name-display">
+            <span id="playerDisplayName">—</span>
+            <span class="uid-badge" id="playerIDLabel"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Currency -->
+      <div class="settings-section">
+        <div class="settings-label">Currency (Coins)</div>
+        <div class="settings-row">
+          <input type="number" id="currencyAmount" placeholder="Amount..." min="1">
+          <button onclick="modifyCurrency('add')">➕ Add</button>
+          <button onclick="modifyCurrency('remove')" class="kick-btn-inline">➖ Remove</button>
+        </div>
+      </div>
+
+      <!-- Items -->
+      <div class="settings-section">
+        <div class="settings-label">Items</div>
+        <div class="settings-row">
+          <input type="text" id="itemId" placeholder="Item ID...">
+          <button onclick="modifyItem('add')">➕ Add Item</button>
+          <button onclick="modifyItem('remove')" class="kick-btn-inline">➖ Remove Item</button>
+        </div>
+      </div>
+
+      <div id="statusMsg" class="status-msg"></div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+  <script src="playfab-panel.js"></script>
+</body>
+</html>

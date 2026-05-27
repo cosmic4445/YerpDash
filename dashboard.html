@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hub</title>
+  <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,44 +14,46 @@
         <span class="arrow" id="arrow">▾</span>
       </button>
       <div class="dropdown-menu" id="dropdownMenu">
+        <button id="devBtn" onclick="window.location.href='dev.html'" style="display:none">🛠️ Dev Panel</button>
         <button onclick="window.location.href='settings.html'">⚙️ Settings</button>
         <button onclick="window.location.href='help.html'">❓ Help</button>
         <button onclick="logout()">🚪 Logout</button>
       </div>
     </div>
-  </div>
-
-  <div class="hub-content">
-    <div class="panel">
-      <h2>Player Control</h2>
-
-      <div class="search-row">
-        <select id="playerSelect" onchange="onPlayerSelected()">
-          <option value="">Loading players...</option>
-        </select>
-        <button onclick="loadPlayers()" title="Refresh">🔄</button>
-      </div>
-
-      <div id="playerInfo" class="player-info" style="display:none">
-        <div class="player-name-display">
-          <span id="playerDisplayName">—</span>
-          <span class="uid-badge" id="playerIDLabel"></span>
-        </div>
-        <div class="action-grid">
-          <button class="action-btn" onclick="openModal('role')">🎖️ Give Role</button>
-          <button class="action-btn kick-btn" onclick="kickPlayer()">👢 Kick</button>
-          <button class="action-btn ban-btn" onclick="openModal('ban')">🔨 Ban</button>
-        </div>
-      </div>
-
-      <div id="statusMsg" class="status-msg"></div>
+    <div class="tab-bar">
+      <button class="tab-btn active">🏠 Home</button>
+      <button class="tab-btn" onclick="window.location.href='moderation.html'">🛡️ Moderation</button>
+      <button class="tab-btn" onclick="window.location.href='playfab.html'">🎮 PlayFab</button>
+      <button class="tab-btn" onclick="window.location.href='fun.html'">🎉 Fun</button>
     </div>
   </div>
 
-  <div class="modal-bg" id="modalBg" onclick="closeModal(event)">
-    <div class="modal" id="modalContent"></div>
+  <div class="page-content">
+    <div class="hub-grid">
+      <div class="hub-card" onclick="window.location.href='moderation.html'">
+        <div class="hub-card-icon">🛡️</div>
+        <div class="hub-card-title">Moderation</div>
+        <div class="hub-card-desc">Ban, kick and manage players</div>
+      </div>
+      <div class="hub-card" onclick="window.location.href='playfab.html'">
+        <div class="hub-card-icon">🎮</div>
+        <div class="hub-card-title">PlayFab</div>
+        <div class="hub-card-desc">Manage currency and items</div>
+      </div>
+      <div class="hub-card" onclick="window.location.href='fun.html'">
+        <div class="hub-card-icon">🎉</div>
+        <div class="hub-card-title">Fun</div>
+        <div class="hub-card-desc">Extra tools and commands</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tour Modal -->
+  <div class="modal-bg open" id="tourModal" style="display:none">
+    <div class="modal" style="width:460px;" id="tourContent"></div>
   </div>
 
   <script src="dashboard.js"></script>
+  <script src="tour.js"></script>
 </body>
 </html>

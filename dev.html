@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Developer Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hub-topbar">
+    <div class="staff-dropdown-wrap">
+      <button class="staff-btn" onclick="toggleDropdown()">
+        <span id="staffName">Staff</span>
+        <span class="arrow" id="arrow">▾</span>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <button onclick="window.location.href='settings.html'">⚙️ Settings</button>
+        <button onclick="window.location.href='help.html'">❓ Help</button>
+        <button onclick="logout()">🚪 Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hub-content" style="padding-top:80px;justify-content:flex-start;align-items:center;">
+    <div class="panel" style="width:600px;margin-top:40px;">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+        <h2>🛠️ Developer Panel</h2>
+        <button onclick="openCreateModal()" style="padding:8px 16px;font-size:13px;border-radius:8px;">+ New Account</button>
+      </div>
+
+      <div id="accountsList"></div>
+    </div>
+  </div>
+
+  <!-- Edit / Create Modal -->
+  <div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+    <div class="modal" style="width:420px;" id="modalContent"></div>
+  </div>
+
+  <script src="dashboard.js"></script>
+  <script src="dev.js"></script>
+</body>
+</html>

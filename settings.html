@@ -15,6 +15,7 @@
       </button>
       <div class="dropdown-menu" id="dropdownMenu">
         <button onclick="window.location.href='settings.html'">⚙️ Settings</button>
+        <button id="devBtn" onclick="window.location.href='dev.html'" style="display:none">🛠️ Dev Panel</button>
         <button onclick="window.location.href='help.html'">❓ Help</button>
         <button onclick="logout()">🚪 Logout</button>
       </div>
@@ -63,6 +64,12 @@
         </div>
       </div>
 
+      <div class="settings-section">
+        <div class="settings-label">Tour</div>
+        <div class="settings-row">
+          <button onclick="window.location.href='dashboard.html?tour=1'">▶ Replay Tour</button>
+        </div>
+      </div>
       <div id="settingsStatus" class="status-msg"></div>
     </div>
   </div>

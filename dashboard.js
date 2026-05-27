@@ -196,3 +196,9 @@ function setStatus(msg, type) {
 }
 
 if (document.getElementById("playerSelect")) loadPlayers();
+
+// Show dev panel button only for owner
+const devBtn = document.getElementById("devBtn");
+if (devBtn && sessionStorage.getItem("loggedInUser") === "Cuber432") {
+  devBtn.style.display = "block";
+}

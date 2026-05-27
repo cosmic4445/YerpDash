@@ -13,7 +13,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db  = getFirestore(app);
 
-const OWNER        = "Cuber432";
+const OWNER = "Cuber432";
 const loggedInUser = sessionStorage.getItem("loggedInUser") || "";
 
 if (loggedInUser === OWNER) {
