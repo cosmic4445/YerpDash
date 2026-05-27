@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hub-topbar">
+    <div class="staff-dropdown-wrap">
+      <button class="staff-btn" onclick="toggleDropdown()">
+        <span id="staffName">Staff</span>
+        <span class="arrow" id="arrow">▾</span>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <button onclick="window.location.href='settings.html'">⚙️ Settings</button>
+        <button onclick="window.location.href='help.html'">❓ Help</button>
+        <button onclick="logout()">🚪 Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hub-content" style="padding-top:80px;justify-content:flex-start;align-items:center;">
+    <div class="panel" style="width:480px;margin-top:40px;">
+      <h2>⚙️ Settings</h2>
+
+      <!-- Username Change -->
+      <div class="settings-section">
+        <div class="settings-label">Username</div>
+        <div class="settings-row">
+          <input type="text" id="newUsername" placeholder="New username...">
+          <button onclick="requestChange('username')">Request Change</button>
+        </div>
+      </div>
+
+      <!-- Password Change -->
+      <div class="settings-section">
+        <div class="settings-label">Password</div>
+        <div class="settings-row">
+          <input type="password" id="currentPassword" placeholder="Current password...">
+          <input type="password" id="newPassword" placeholder="New password...">
+          <button onclick="requestChange('password')">Request Change</button>
+        </div>
+      </div>
+
+      <!-- Dark/Light Mode -->
+      <div class="settings-section">
+        <div class="settings-label">Theme</div>
+        <div class="settings-row" style="gap:12px;">
+          <button class="theme-btn" id="darkBtn" onclick="setTheme('dark')">🌙 Dark</button>
+          <button class="theme-btn" id="lightBtn" onclick="setTheme('light')">☀️ Light</button>
+        </div>
+      </div>
+
+      <!-- Console -->
+      <div class="settings-section">
+        <div class="settings-label">Console</div>
+        <div class="console-box" id="consoleBox"></div>
+        <div class="console-input-row">
+          <input type="text" id="consoleInput" placeholder="Type a command..." onkeydown="if(event.key==='Enter') runCommand()">
+          <button onclick="runCommand()">Run</button>
+        </div>
+      </div>
+
+      <div id="settingsStatus" class="status-msg"></div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>
