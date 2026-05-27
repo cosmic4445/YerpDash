@@ -27,12 +27,10 @@
         <h2>❓ Help & Q&A</h2>
         <button id="createPostBtn" onclick="openPostModal()" style="display:none;padding:8px 16px;font-size:13px;border-radius:8px;">+ Create Post</button>
       </div>
-
       <div id="postsList"></div>
     </div>
   </div>
 
-  <!-- Create Post Modal -->
   <div class="modal-bg" id="modalBg" onclick="closeModal(event)">
     <div class="modal" style="width:400px;" id="modalContent">
       <h3>📝 Create Post</h3>
@@ -48,6 +46,6 @@
   </div>
 
   <script src="dashboard.js"></script>
-  <script src="help.js"></script>
+  <script type="module" src="help.js"></script>
 </body>
 </html>
