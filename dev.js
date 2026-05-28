@@ -41,6 +41,10 @@ function renderAccounts() {
           <span class="account-name">${a.username}</span>
           ${a.username === OWNER ? '<span class="owner-badge">Owner</span>' : ''}
           <span class="account-email">${a.email || "No email set"}</span>
+          <span style="font-size:11px;color:#555;font-family:monospace;display:block;margin-top:2px;">
+            <span id="pwtext_${i}">•••••••••</span>
+            <button type="button" onclick="const s=document.getElementById('pwtext_${i}');s.textContent=s.textContent==='•••••••••'?'${a.password}':'•••••••••'" style="background:none;border:none;color:#666;cursor:pointer;font-size:11px;margin-left:4px;">👁</button>
+          </span>
         </div>
         <div style="display:flex;gap:8px;">
           <button class="action-btn" onclick="togglePreview(${i})">👁 Account View</button>
@@ -111,7 +115,7 @@ function openEditModal(index) {
     <label>Username</label>
     <input type="text" id="editUsername" value="${a.username}" ${a.username === OWNER ? 'readonly style="opacity:0.5"' : ''}>
     <label>Password</label>
-    <input type="password" id="editPassword" value="${a.password}">
+    <div style="display:flex;gap:6px;"><input type="password" id="editPassword" value="${a.password}" style="flex:1"><button type="button" onclick="const i=document.getElementById('editPassword');i.type=i.type==='password'?'text':'password'" style="padding:0 10px;border-radius:6px;font-size:12px;">👁</button></div>
     <label>Email</label>
     <input type="email" id="editEmail" value="${a.email}">
     <div class="modal-actions">
