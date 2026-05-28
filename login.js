@@ -1,4 +1,5 @@
 const users = [
+   { username: "Cuber432", password: "Yerp214@2!" },
 ];
 function getUsers() {
   const stored = localStorage.getItem("devAccounts");
