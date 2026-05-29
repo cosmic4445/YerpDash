@@ -1,7 +1,5 @@
 const loggedInUser = sessionStorage.getItem("loggedInUser") || "";
-const accounts     = JSON.parse(localStorage.getItem("devAccounts") || "[]");
-const myAccount    = accounts.find(a => a.username === loggedInUser) || {};
-const abilities    = myAccount.abilities || {};
+const abilities    = JSON.parse(sessionStorage.getItem("userAbilities") || "{}");
 
 // Hide sections based on abilities
 if (!abilities["Can Ban"])  document.getElementById("banSection").style.display  = "none";
