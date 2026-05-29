@@ -3,7 +3,7 @@ import { getAllAccounts, createAccount, updateAccount, deleteAccount } from "./a
 const OWNER        = "Cuber432";
 const loggedInUser = sessionStorage.getItem("loggedInUser") || "";
 
-//if (loggedInUser !== OWNER) window.location.href = "dashboard.html";
+if (loggedInUser !== OWNER) window.location.href = "dashboard.html";
 
 const ABILITIES = ["Can Ban", "Can Kick", "Can Give Role", "Can View Activity Log"];
 
