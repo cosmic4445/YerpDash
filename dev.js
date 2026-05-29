@@ -1,7 +1,7 @@
 import { getAllAccounts, createAccount, updateAccount, deleteAccount } from "./auth.js";
 
 const OWNER        = "Cuber432";
-const loggedInUser = sessionStorage.getItem("loggedInUser") || "";
+//const loggedInUser = sessionStorage.getItem("loggedInUser") || "";
 
 if (loggedInUser !== OWNER) window.location.href = "dashboard.html";
 
