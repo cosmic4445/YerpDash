@@ -202,3 +202,8 @@ const devBtn = document.getElementById("devBtn");
 if (devBtn && sessionStorage.getItem("loggedInUser") === "Cuber432") {
   devBtn.style.display = "block";
 }
+
+// ── Get abilities from session ─────────────────────────
+function getAbilities() {
+  return JSON.parse(sessionStorage.getItem("userAbilities") || "{}");
+}
